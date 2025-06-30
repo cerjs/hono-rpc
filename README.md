@@ -23,7 +23,7 @@ autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/json
 ### hono-rpc
 
 ```
-autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/hono         
+autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/rpc         
 ```
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |

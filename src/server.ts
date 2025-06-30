@@ -1,7 +1,7 @@
 import { serve } from '@hono/node-server'
 import { zValidator } from '@hono/zod-validator'
 import { Hono } from 'hono'
-import { z } from 'zod'
+import { z } from 'zod/v4'
 
 const app = new Hono()
 app.get('/hono', (c) => c.text('Hello Node.js!'))
@@ -9,7 +9,7 @@ app.get('/hono', (c) => c.text('Hello Node.js!'))
 app.get('/api/json', (c) => c.json(
   {
     "result": {
-    "data": "Hello fastify"
+    "data": "Hello hono"
     }
   },
   200
@@ -30,10 +30,11 @@ const route = app.get(
     // ...
     return c.json(
       {
-        ok: true,
-        message: 'Created!',
+        "result": {
+        "data": "Hello hono"
+        }
       },
-      201
+      200
     )
   }
 )
