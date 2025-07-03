@@ -6,46 +6,49 @@
 
 ## hono-json
 ```
-autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/json         
+autocannon -c 200 -d 10 -p 100 http://localhost:8787/api/json         
 ```
 
 ### deno
+memory using ≈ 90m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%     | Avg      | Stdev   | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-|Latency  | 50 ms  | 56 ms  | 60 ms  | 63 ms   | 55.86 ms | 2.98 ms | 93 ms   |
+| Latency | 101 ms | 115 ms | 124 ms | 151 ms | 114.95 ms | 7.34 ms | 161 ms |
 
 
 | Stat    | 1%      | 2.5%    |50%      |97.5%    |Avg      |Stdev    |Min      |
 |---------|---------|---------|---------|---------|---------|---------|---------|
-| Req/Sec   | 173,695 | 173,695 | 176,895 | 180,223 | 177,088 | 1,674.8 | 173,620 |
-| Bytes/Sec | 28.3 MB | 28.3 MB | 28.8 MB | 29.4 MB | 28.9 MB | 274 kB  | 28.3 MB |
+| Req/Sec   | 167,423 | 167,423 | 172,287 | 176,767 | 172,492.8 | 2,532.63 | 167,354
+| Bytes/Sec | 27.3 MB | 27.3 MB | 28.1 MB | 28.8 MB | 28.1 MB   | 416 kB   | 27.3 MB | 
 
-1781k requests in 10.03s, 289 MB read
+1745k requests in 10.04s, 281 MB read
 
 ### node
+memory using ≈ 160m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-| Latency | 56 ms  | 59 ms  | 120 ms | 123 ms | 71.11 ms | 24.9 ms | 669 ms |
+| Latency | 175 ms | 201 ms | 212 ms | 213 ms | 209.31 ms | 245.28 ms | 7331 ms |
 
 | Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
 |---------|---------|---------|---------|---------|---------|---------|---------|
-| Req/Sec | 121,279 | 121,279 | 141,311 | 142,463 | 139,301.82 | 5,775.13 | 121,275 |
-| Bytes/Sec | 23.1 MB | 23.1 MB | 26.8 MB | 27 MB   | 26.5 MB    | 1.09 MB  | 23 MB   |
+| Req/Sec   | 89,471  | 89,471  | 94,911  | 96,959  | 94,484.37 | 1,742.88 | 89,443  |
+| Bytes/Sec | 16.7 MB | 16.7 MB | 17.7 MB | 18.1 MB | 17.7 MB   | 325 kB   | 16.7 MB |
 
-1542k requests in 11.03s, 291 MB read
+1394k requests in 10.03s, 257 MB read
 
 ## hono-rpc-zod
 ```
-autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/zod         
+autocannon -c 200 -d 10 -p 100 http://localhost:8787/api/zod         
 ```
 
 ### deno
+memory using ≈ 100m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-| Latency | 63 ms | 67 ms | 71 ms | 72 ms | 67.04 ms | 2.47 ms | 108 ms |
+| Latency | 129 ms | 135 ms | 139 ms | 140 ms | 134.44 ms | 6.63 ms | 158 ms 
 
 
 | Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
@@ -57,57 +60,54 @@ autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/zod
 
 
 ### node
-
-```
-autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/zod         
-```
+memory using ≈ 750m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-| Latency | 89 ms  | 121 ms | 190 ms | 203 ms | 130.26 ms | 180.74 ms | 5620 ms |
+| Latency | 275 ms | 304 ms | 381 ms | 384 ms | 309.4 ms | 149.72 ms | 5145 ms |
 
 
 | Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
 |---------|---------|---------|---------|---------|---------|---------|---------|
-| Req/Sec | 67,135  | 67,135  | 75,327  | 83,519 | 76,064  | 4,165.71 | 67,087  |
-| Bytes/Sec | 12.9 MB | 12.9 MB | 14.5 MB | 16 MB  | 14.6 MB | 799 kB   | 12.9 MB |
+| Req/Sec   | 58,559 | 58,559 | 64,479  | 66,623  | 63,576  | 2,583.44 | 58,534  |
+| Bytes/Sec | 11 MB  | 11 MB  | 12.1 MB | 12.5 MB | 11.9 MB | 483 kB   | 10.9 MB |
 
-771k requests in 10.03s, 146 MB read
-
+656k requests in 10.03s, 119 MB read
 
 ## hono-rpc-typebox
 ```
-autocannon -c 200 -d 10 -p 50 http://localhost:8787/api/typebox         
+autocannon -c 200 -d 10 -p 100 http://localhost:8787/api/typebox         
 ```
 
 ### deno
+memory using ≈ 100m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-| Latency | 63 ms | 67 ms | 71 ms | 72 ms | 67.04 ms | 2.47 ms | 108 ms |
+| Latency | 124 ms | 131 ms | 137 ms | 140 ms | 130.31 ms | 6.78 ms | 152 ms |
 
 
 | Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
 |---------|---------|---------|---------|---------|---------|---------|---------|
-| Req/Sec   | 145,535 | 145,535 | 148,095 | 149,503 | 147,706.19 | 1,202.44 | 145,432 |
-| Bytes/Sec | 23.7 MB | 23.7 MB | 24.2 MB | 24.4 MB | 24.1 MB    | 201 kB   | 23.7 MB |
+| Req/Sec   | 148,991 | 148,991 | 151,551 | 154,879 | 152,102.4 | 1,879.3 | 148,930 |
+| Bytes/Sec | 24.7 MB | 24.7 MB | 25.2 MB | 25.7 MB | 25.2 MB   | 310 kB  | 24.7 MB |
 
-1635k requests in 11.03s, 265 MB read
+1541k requests in 10.03s, 252 MB read
 
 ### node
+memory using ≈ 800m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
 |---------|--------|--------|--------|---------|----------|---------|---------|
-| Latency | 104 ms | 116 ms | 228 ms | 284 ms | 124.62 ms | 65.07 ms | 2716 ms
+| Latency | 273 ms | 302 ms | 374 ms | 377 ms | 302.7 ms | 83.99 ms | 3511 ms |
 
 
 | Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
 |---------|---------|---------|---------|---------|---------|---------|---------|
-| Req/Sec   | 68,095  | 68,095  | 82,815  | 85,951  | 79,488  | 6,417.34 | 68,077  |
-| Bytes/Sec | 12.9 MB | 12.9 MB | 15.7 MB | 16.3 MB | 15.1 MB | 1.22 MB  | 12.9 MB 
+| Req/Sec   | 57,247  | 57,247  | 65,663  | 68,863  | 65,118.55 | 2,967.74 | 57,218  |
+| Bytes/Sec | 10.9 MB | 10.9 MB | 12.5 MB | 13.1 MB | 12.4 MB   | 563 kB   | 10.9 MB |
 
-805k requests in 10.03s, 151 MB read
-
+736k requests in 11.03s, 136 MB read
 
 ### something else
 
