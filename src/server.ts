@@ -1,7 +1,9 @@
-import { serve } from '@hono/node-server'
 import { zValidator } from '@hono/zod-validator'
-import { Hono } from 'hono'
 import { z } from 'zod/v4'
+
+import { tbValidator } from '@hono/typebox-validator'
+import { Type as T } from '@sinclair/typebox'
+import { Hono } from 'hono'
 
 const app = new Hono()
 app.get('/hono', (c) => c.text('Hello Node.js!'))
@@ -18,7 +20,7 @@ app.get('/api/json', (c) => c.json(
 
 
 const route = app.get(
-  '/api/rpc',
+  '/api/zod',
   zValidator(
     'json',
     z.object({
@@ -39,24 +41,27 @@ const route = app.get(
   }
 )
 
+const schema = T.Optional(T.Object({
+  name: T.Optional(T.String()),
+  age:  T.Optional(T.Number()),
+}))
+
+app.get(
+  '/api/typebox',
+  tbValidator('json', schema),
+  (c) => {
+    // ...
+    return c.json(
+      {
+        "result": {
+        "data": "Hello typebox"
+        }
+      },
+      200
+    )
+  }
+)
+
 export type AppType = typeof route;
 
-const server = serve({
-  fetch: app.fetch,
-  port: 8787,
-})
-
-// graceful shutdown
-process.on('SIGINT', () => {
-  server.close()
-  process.exit(0)
-})
-process.on('SIGTERM', () => {
-  server.close((err) => {
-    if (err) {
-      console.error(err)
-      process.exit(1)
-    }
-    process.exit(0)
-  })
-})
+export { app }

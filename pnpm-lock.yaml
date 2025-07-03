@@ -11,9 +11,15 @@ importers:
       '@hono/node-server':
         specifier: ^1.14.4
         version: 1.14.4(hono@4.8.3)
+      '@hono/typebox-validator':
+        specifier: ^0.3.3
+        version: 0.3.3(@sinclair/typebox@0.34.37)(hono@4.8.3)
       '@hono/zod-validator':
         specifier: ^0.7.0
         version: 0.7.0(hono@4.8.3)(zod@3.25.67)
+      '@sinclair/typebox':
+        specifier: ^0.34.37
+        version: 0.34.37
       hono:
         specifier: ^4.8.3
         version: 4.8.3
@@ -192,11 +198,20 @@ packages:
     peerDependencies:
       hono: ^4
 
+  '@hono/typebox-validator@0.3.3':
+    resolution: {integrity: sha512-BH6TOkVKlLIYYX4qfadpkNZDP/knxtCXp4210T9apKioA7q8mq1m3ELEvMMLhrtZBhzPOAlTr83A6RLZ3awDtg==}
+    peerDependencies:
+      '@sinclair/typebox': '>=0.31.15 <1'
+      hono: '>=3.9.0'
+
   '@hono/zod-validator@0.7.0':
     resolution: {integrity: sha512-qe2ZE6sHFE98dcUrbYMtS3bAV8hqcCOflykvZga2S7XhmNSZzT+dIz4OuMILsjLHkJw9JMn912/dB7dQOmuPvg==}
     peerDependencies:
       hono: '>=3.9.0'
       zod: ^3.25.0
+
+  '@sinclair/typebox@0.34.37':
+    resolution: {integrity: sha512-2TRuQVgQYfy+EzHRTIvkhv2ADEouJ2xNS/Vq+W5EuuewBdOrvATvljZTxHWZSTYr2sTjTHpGvucaGAt67S2akw==}
 
   '@types/node@24.0.4':
     resolution: {integrity: sha512-ulyqAkrhnuNq9pB76DRBTkcS6YsmDALy6Ua63V8OhrOBgbcYt6IOdzpw5P1+dyRIyMerzLkeYWBeOXPpA9GMAA==}
@@ -318,10 +333,17 @@ snapshots:
     dependencies:
       hono: 4.8.3
 
+  '@hono/typebox-validator@0.3.3(@sinclair/typebox@0.34.37)(hono@4.8.3)':
+    dependencies:
+      '@sinclair/typebox': 0.34.37
+      hono: 4.8.3
+
   '@hono/zod-validator@0.7.0(hono@4.8.3)(zod@3.25.67)':
     dependencies:
       hono: 4.8.3
       zod: 3.25.67
+
+  '@sinclair/typebox@0.34.37': {}
 
   '@types/node@24.0.4':
     dependencies:

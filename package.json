@@ -2,15 +2,18 @@
   "name": "hono-rpc",
   "version": "1.0.0",
   "private": true,
-  "main": "./src/server.ts",
+  "main": "./src/node.ts",
   "scripts": {
     "start": "pnpm dev",
-    "dev": "NODE_OPTIONS=--trace-warnings tsx watch src/server",
+    "deno": "deno ./src/deno.ts",
+    "dev": "NODE_OPTIONS=--trace-warnings tsx watch src/node",
     "type-check": "tsc"
   },
   "dependencies": {
     "@hono/node-server": "^1.14.4",
+    "@hono/typebox-validator": "^0.3.3",
     "@hono/zod-validator": "^0.7.0",
+    "@sinclair/typebox": "^0.34.37",
     "hono": "^4.8.3",
     "zod": "^3.25.67"
   },
