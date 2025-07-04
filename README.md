@@ -1,8 +1,12 @@
-## hono-rpc benchmark
+## hono-rpc benchm
+
+hono seems win everything
 
 1. zod  ≈ typebox (typebox is a little faster)
 2. json ≈ 2x zod/typebox
 3. deno ≈ 2x node (deno is more stable, and not much volatility)
+4. hono-node ≈ 3x trpc-fastify-nodejs
+5. hono-deno ≈ 7x trpc-fastify-nodejs
 
 ## hono-json
 ```
