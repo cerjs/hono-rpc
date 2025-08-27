@@ -29,7 +29,7 @@ memory using ≈ 90m
 
 1745k requests in 10.04s, 281 MB read
 
-### node
+### node@22
 memory using ≈ 160m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
@@ -113,7 +113,7 @@ memory using ≈ 100m
 
 1541k requests in 10.03s, 252 MB read
 
-### node
+### node@22
 memory using ≈ 800m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
