@@ -4,9 +4,10 @@ hono seems win everything
 
 1. zod  ≈ typebox (typebox is a little faster)
 2. json ≈ 2x zod/typebox
-3. deno ≈ 2x node (deno is more stable, and not much volatility)
+3. deno ≈ 2.5x node@22 (deno is more stable, and not much volatility)
 4. hono-node ≈ 3x trpc-fastify-nodejs
 5. hono-deno ≈ 7x trpc-fastify-nodejs
+6. node@24 ≈ 1.4x node@22
 
 ## hono-json
 ```
@@ -63,7 +64,7 @@ memory using ≈ 100m
 1635k requests in 11.03s, 265 MB read
 
 
-### node
+### node@22
 memory using ≈ 750m
 
 | Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
@@ -77,6 +78,20 @@ memory using ≈ 750m
 | Bytes/Sec | 11 MB  | 11 MB  | 12.1 MB | 12.5 MB | 11.9 MB | 483 kB   | 10.9 MB |
 
 656k requests in 10.03s, 119 MB read
+
+### node@24
+memory using ≈ 220m
+
+| Stat    | 2.5%   | 50%    | 97.5%  | 99%    | Avg     | Stdev    | Max     |
+|---------|--------|--------|--------|---------|----------|---------|---------|
+| Latency │ 182 ms │ 212 ms │ 296 ms │ 360 ms │ 224.09 ms │ 237.47 ms │ 7222 ms │
+
+| Stat    | 1%      | 2.5%    |50%    |97.5%  |Avg      |Stdev    |Min     |
+|---------|---------|---------|---------|---------|---------|---------|---------|
+| Req/Sec   │ 74,815 │ 74,815 │ 91,519  │ 92,863  │ 88,264.73 │ 5,754.14 │ 74,800 │
+| Bytes/Sec │ 14 MB  │ 14 MB  │ 17.1 MB │ 17.4 MB │ 16.5 MB   │ 1.08 MB  │ 14 MB  │
+
+991k requests in 11.03s, 182 MB read
 
 ## hono-rpc-typebox
 ```

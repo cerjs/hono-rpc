@@ -7,7 +7,7 @@ const client = hc<AppType>('http://localhost:8787/',{
 })
 
 const handleRPC = async () => {
-  const res = await client.api.rpc.$get({
+  const res = await client.api.zod.$get({
     json: {
       title: 'Hello',
       body: 'Hono is a cool project',
