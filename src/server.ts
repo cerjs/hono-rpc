@@ -1,5 +1,5 @@
 import { zValidator } from '@hono/zod-validator'
-import { z } from 'zod/v4'
+import { z } from 'zod'
 
 import { tbValidator } from '@hono/typebox-validator'
 import { Type as T } from '@sinclair/typebox'

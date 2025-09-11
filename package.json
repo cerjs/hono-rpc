@@ -10,17 +10,17 @@
     "type-check": "tsc"
   },
   "dependencies": {
-    "@hono/node-server": "^1.14.4",
+    "@hono/node-server": "^1.19.2",
     "@hono/typebox-validator": "^0.3.3",
-    "@hono/zod-validator": "^0.7.0",
-    "@sinclair/typebox": "^0.34.37",
-    "hono": "^4.8.3",
-    "zod": "^3.25.67"
+    "@hono/zod-validator": "^0.7.2",
+    "@sinclair/typebox": "^0.34.41",
+    "hono": "^4.9.6",
+    "zod": "^4.1.7"
   },
   "devDependencies": {
-    "@types/node": "^24.0.4",
-    "esbuild": "^0.25.5",
-    "tsx": "^4.20.3",
-    "typescript": "^5.8.3"
+    "@types/node": "^24.3.1",
+    "esbuild": "^0.25.9",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2"
   }
 }
